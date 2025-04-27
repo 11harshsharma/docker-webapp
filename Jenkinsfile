@@ -57,7 +57,7 @@ pipeline {
                 script {
                     sh '''
                     echo "Deploying docker container on application server..."
-                    ssh -i $SSH_KEY -o StrictHostKeyChecking=no root@3.21.21.150 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 370857112107.dkr.ecr.us-east-2.amazonaws.com && docker pull 370857112107.dkr.ecr.us-east-2.amazonaws.com/demo:latest && docker run --name flask-app-container -d -p 5000:5000 370857112107.dkr.ecr.us-east-2.amazonaws.com/demo:latest'
+                    ssh -i $SSH_KEY -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} 'aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 370857112107.dkr.ecr.us-east-2.amazonaws.com && docker pull 370857112107.dkr.ecr.us-east-2.amazonaws.com/demo:latest && docker run --name flask-app-container -d -p 5000:5000 370857112107.dkr.ecr.us-east-2.amazonaws.com/demo:latest'
                     '''
                 }
             }
