@@ -15,7 +15,7 @@ __The pipeline is integrated with the Jenkins-GitHub webhook, ensuring that any 
 
 **Stops and removes the existing Docker container flask-app-container (if running).**
 
-7.	Deploy New Container Pulls the latest Docker image from AWS ECR onto the application server.
+6.	Deploy New Container Pulls the latest Docker image from AWS ECR onto the application server.
 
 **Deploys the new container named flask-app-container and exposes it on port 5000.**
 
