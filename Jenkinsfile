@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Define application server details
-        REMOTE_HOST = '3.21.21.150'
+        REMOTE_HOST = '3.148.173.123'
         REMOTE_USER = 'root'
     }
     stages {
